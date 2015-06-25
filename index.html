@@ -72,9 +72,12 @@
     function checkremovetape(obj){
       obj.addClass("open");
 
-      obj.animate({ width: "hide" }, "slow", null, function(){
-        checkopen();
+      obj.find(".tapedesc").fadeOut("fast", function(){
+        obj.animate({ width: "hide" }, "slow", null, function(){
+          checkopen();
+        });
       });
+
     }
 
     $("div#left_tape").click(function(){
@@ -96,10 +99,10 @@
     jQueryで、おむつを開く演出
     <div id="cover">
       <div id="left_tape">
-        クリックでテープを剥がしてね♡
+        <span class="tapedesc">クリックでテープを剥がしてね♡</span>
       </div>
       <div id="right_tape">
-        クリックでテープを剥がしてね♡
+        <span class="tapedesc">クリックでテープを剥がしてね♡</span>
       </div>
     </div>
     <div id="open_content">
