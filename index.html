@@ -16,25 +16,29 @@
 #maincontent {
   position: relative;
   background: #CCCCCC;
-  height: 1000px;
+  height: 700px;
 }
 #left_tape {
   position: absolute;
-  bottom:400px;
+  top:50px;
   left:0px;
   width: 300px;
-  height: 50px;
+  height: 150px;
   background: #FFCCCC;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
 }
 #right_tape {
   position: absolute;
-  bottom:400px;
+  top:50px;
   right:0px;
   width: 300px;
-  height: 50px;
+  height: 150px;
   background: #FFCCCC;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
 }
 #cover {
   position: absolute;
@@ -45,9 +49,9 @@
 }
 #open_content {
   position: absolute;
-  top:500px;
+  top:200px;
   width: 100%;
-  height: 1000px;
+  height: 1300px;
   background: #CCFFFF;
   display: none;
 }
@@ -67,6 +71,7 @@
 
     function checkremovetape(obj){
       obj.addClass("open");
+
       obj.animate({ width: "hide" }, "slow", null, function(){
         checkopen();
       });
@@ -84,23 +89,22 @@
 <body>
 
 <div class="grid">
+  <div class="col-1-3 hide-on-mobile">
+    サイドバーグリッド
+  </div>
   <div id="maincontent" class="col-2-3 mobile-col-1-1">
-    ぐりぐりグリッド
+    jQueryで、おむつを開く演出
     <div id="cover">
-      カバーされている！
+      <div id="left_tape">
+        クリックでテープを剥がしてね♡
+      </div>
+      <div id="right_tape">
+        クリックでテープを剥がしてね♡
+      </div>
     </div>
     <div id="open_content">
       開かれた！！
     </div>
-    <div id="left_tape">
-      &nbsp;
-    </div>
-    <div id="right_tape">
-      &nbsp;
-    </div>
-  </div>
-  <div class="col-1-3 hide-on-mobile">
-    ぐりぐりグリッド
   </div>
 </div>
 
